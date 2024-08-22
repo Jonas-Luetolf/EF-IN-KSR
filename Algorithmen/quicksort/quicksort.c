@@ -19,13 +19,13 @@ void printarr(int *arr, int len) {
 
 void quicksort(int *arr, int len){
     if (len>1) {
-        int *pivo = arr;
+        int *pivot = arr;
         int *i = arr+1;
         int *j = arr + len-1;
 
         while (i<=j) {
-            while (*i < *pivo) i++;
-            while (*j > *pivo) j--;
+            while (*i < *pivot) i++;
+            while (*j > *pivot) j--;
         
             if (*i > *j && i<j){         
             swapint(i, j);
@@ -34,7 +34,7 @@ void quicksort(int *arr, int len){
             }
         }
 
-        swapint(pivo, j);
+        swapint(pivot, j);
 
         quicksort(arr, j-arr);
         quicksort(j+1, len - (j-arr)-1);
